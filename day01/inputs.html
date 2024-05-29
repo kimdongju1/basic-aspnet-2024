@@ -9,11 +9,12 @@
 <body>
     <h3>회원가입</h3>
     <hr>
-    <form method="post"><!-- 입력양식 태그사용시는 반드시 필요!! -->
+    <form method="get"><!-- 입력양식 태그사용시는 반드시 필요!! -->
         <fieldset>
+            <legend>로그인</legend>
+            <input type="text" name="id" value="test"><br>
+            <input type="password" name="pass" value="12345"><br>
         </fieldset>
-        <input type="text" name="id" value="test"><br>
-        <input type="password" name="pass" value="12345"><br>
         <input type="file" name="uploadfile"><br>
         <input type="checkbox" name="male" value="남자">남자<input type="checkbox" name="female" value="여자">여자<br>
         <input type="radio" name="fruit" value="apple">사과 <input type="radio" name="fruit" value="apple">레몬<br> 
@@ -29,10 +30,9 @@
                 <option value="떡볶이">떡볶이</option>
                 <option value="순대">순대</option>
             </optgroup>
-            <option value="오뎅">오뎅</option>
-            <option value="고추튀김">고추튀김</option>
             <optgroup label="옵션!">
-
+                <option value="오뎅">오뎅</option>
+                <option value="고추튀김">고추튀김</option>
             </optgroup>
         </select><br>
 
