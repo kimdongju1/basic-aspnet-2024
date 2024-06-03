@@ -136,4 +136,54 @@ IoT 개발자과정 ASP.NET 리포지토리
 
     - DOM(Document Object Model) !!!
         - 실행 순서 
+        - HTML에 있는 모든 요소를 제어할 수 있음
+        - html 애니메이션, 게임, 통신 모두 가능
+        - 이벤트 on- 으로 시작
+            - onload : 화면이 다 렌더링되면 그 다음 발생
+            - onfocus : 객체에 마우스를 클릭해서 포커스가 가면 발생
+            - onclick : 객체를 마우스로 클릭하면 발생
+            - ondbclick : 더블클릭
+            - onmousemove : 마우스를 이동하면 발생
+            - onmouseover : 객체 위에 마우스가 올라가면 발생
+            - onkeydown, onkeypress : 객체에서 키보드를 타이핑하면 발생
+            - ...
+
+    - jQuery
+        - 자바스크립트 라이브러리
+        - js를 매우 편리하게 사용할 수 있도록 도와주는 서포트 라이브러리
+        - 순식간에 웹개발 업계를 장악했던 라이브러리
+        - 사용빈도가 줄고는 있지만 아직도 80% 웹사이트가 사용 중
+        - js 파일 다운로드 후 사용하거나
+        - CDN 링크를 사용하는방법(추천)
+
+## 4일차(24-06-03)
+- HTML + CSS + js(jQuery) 응용
+    - jQuery 응용
+        - javascript와 jQury를 혼용해도 상관없음 
+        - jQuery로 코딩편할때와 javascript가 편할때도 있음 
+    - Bootstrap
+        - 오픈소스 CSS 프레임워크
+        - 트위터 블루프린트 -> 부트스트랩
+        - 현재 전세계에서 가장 각광받는 프레임워크 중 하나
+        - CSS를 동작시키기 위해서 Javascript도 포함
+        - 소스 다운로드 받아서 사용(1), CDN으로 링크만 사용(2)
+            - 제한된 네트워크에서는 1번
+            - 인터넷에 항상 연결된 환경에서는 2번이 편리
+        - 핵심!
+            - Bootstrap은 화면사이즐르 12등분!
+                - 12를 넘어서면 디자인이 깨짐!!!
+            - container 밑에 마치 table처럼 div를 구분해서 사용
+            - container > row > col div 태그 클래스 정의
+        - 부트스트랩 학습에 시간을 들이는 게 아님. Copyleft가 정석!
+            - https://getbootstrap.com/docs/5.3/getting-started/introduction/ 참조
+            - https://getbootstrap.com/docs/5.3/examples/ 스니펫을 활용 추천 
+        - 무료 테마(템플릿)가 아주 잘되어 있음 
+            - https://startbootstrap.com/
+
+    - 웹페이지 클로닝
+        - 핀터레스트 타입 웹페이지 만들기(진행중)
+
+## 5일차 
+- HTML + CSS + js(jQuery) 응용
+    - 웹 페이지 클로닝 
         
