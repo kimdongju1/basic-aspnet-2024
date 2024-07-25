@@ -435,6 +435,11 @@ IoT 개발자과정 ASP.NET 리포지토리
         8. Login.cshtml 
         9. Register.cshtml 회원가입 페이지
 
+    
+        https://github.com/user-attachments/assets/26a3125b-331e-4986-9a80-248d162a6e59
+
+
+  
     3. 이력서, 프로젝트, 컨텍트 페이지 구현하기
     4. 관리자모드/페이지
     5. 자신 컴퓨터 IIS 서버에 웹사이트 올리기
