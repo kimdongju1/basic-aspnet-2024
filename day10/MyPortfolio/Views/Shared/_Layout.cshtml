@@ -43,13 +43,16 @@
                         <li class="nav-item"><a class="nav-link" asp-controller="Project" asp-action="Index">PROJECT</a></li>
                         <li class="nav-item"><a class="nav-link" asp-controller="Board" asp-action="Index">BOARD</a></li>
                         <li class="nav-item"><a class="nav-link" asp-controller="Contact" asp-action="Index">CONTACT</a></li>
-                        @if (Context.Session.GetInt32("User_LOGIN_KEY") == null)
+                        @if (Context.Session.GetInt32("USER_LOGIN_KEY") == null)
                         {
                             <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Login">LOGIN</a></li>
                         }
                         else
                         {
-                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Log">LOGOUT</a></li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Logout">
+                                    [@Context.Session.GetString("USER_EMAIL")] LOGOUT
+                                </a>
+                            </li>
                         }
                     </ul>
                 </div>
