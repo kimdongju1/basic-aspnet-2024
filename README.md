@@ -574,11 +574,58 @@ IoT 개발자과정 ASP.NET 리포지토리
         - Views/Home/Project.cshtml
 
     2. 프로젝트 이미지 올리기
-        - 이미지 올리기 중간 모델(클래스) 하나 필요 - TeamProject
+        - 이미지 올리기 중간 모델(클래스) 하나 필요 - TeamProject 클래스(다시!)
         - Project.cshtml 부트스트랩 클래스 수정
         
     2. Contact 메일보내기(네이버 연동)
         - 구글, 네이버 동일 - 메일계정 2단계보안 설정
         - 네이버메일 환경설정 > POP3/SMTP 설정 사용함 변경
+        - 아래 코드를 해당 Post 액션 메서드 대입
+        ```cs
+        try
+            {
+                MailMessage mailMessage = new MailMessage();
+
+                mailMessage.From = new MailAddress("보내는 계정 주소", "표시 이름", System.Text.Encoding.UTF8);
+                // 받는이 메일 주소
+                mailMessage.To.Add("yyy@naver.com");
+                // 참조 메일 주소
+                mailMessage.CC.Add("zzz@naver.com");
+                // 비공개 참조 메일 주소
+                mailMessage.Bcc.Add("kkk@naver.com");
+                // 제목
+                mailMessage.Subject = "메일 제목";
+                // 메일 제목 인코딩 타입(UTF-8) 선택
+                mailMessage.SubjectEncoding = System.Text.Encoding.UTF8;
+                // 본문
+                mailMessage.Body = "메일 본문";
+                // 본문의 포맷에 따라 선택
+                mailMessage.IsBodyHtml = false;
+                // 본문 인코딩 타입(UTF-8) 선택
+                mailMessage.BodyEncoding = System.Text.Encoding.UTF8;
+                // 파일 첨부
+                mailMessage.Attachments.Add(new Attachment(new FileStream(@"D:\test.zip", FileMode.Open, FileAccess.Read), "test.zip"));
+                // SMTP 서버 주소
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+                // SMTP 포트
+                SmtpServer.Port = 587;
+                // SSL 사용 여부
+                SmtpServer.EnableSsl = true;
+                SmtpServer.UseDefaultCredentials = false;
+                SmtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("아이디", "패스워드");
+
+                SmtpServer.Send(mailMessage);
+            }
+            catch (Exception ex)
+            {
+                // 에러메시지 HTML
+            }
+            ```
 
     3. 부트스트랩 템플릿 커스터마이징, 자기 포트폴리오 사이트 만들기
+        - 구글에서 Start Bootstrap 템플릿 검색
+            - https://bootstraptaste.com/
+            - https://startbootstrap.com/
+            - https://themewagon.com/themes/
+            - https://getbootstrap.com/docs/5.0/examples/
