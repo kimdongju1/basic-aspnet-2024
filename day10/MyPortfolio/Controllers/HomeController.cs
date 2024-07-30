@@ -73,10 +73,11 @@ namespace MyPortfolio.Controllers
                 return RedirectToAction("Index", "Home");   // 로그인 완료
             }
         }
-        [HttpGet]
 
+        [HttpGet]
         public IActionResult Logout()
         {
+            // 로그인시 생성된 세션 삭제
             HttpContext.Session.Remove("USER_LOGIN_KEY");
             HttpContext.Session.Remove("USER_NAME");
             HttpContext.Session.Remove("USER_EMAIL");
@@ -110,13 +111,29 @@ namespace MyPortfolio.Controllers
                 user.Password = Common.GetMd5Hash(mdHash, user.Password);
                 user.PasswordCheck = null;
 
-
                 _context.Add(user); // INSERT
                 await _context.SaveChangesAsync();  // COMMIT
                 return RedirectToAction("Login");
             }
 
             return View(user);
+        }
+
+        [HttpGet]
+        public IActionResult Project()
+        {
+            // DB Project 테이블 내용을 리스트로 받아서 View로 전달
+            var list = _context.Project.ToList();
+
+            foreach (var item in list)
+            {
+                item.FilePath = item.FilePath.Replace("\\", "/");
+                var index = item.FilePath.IndexOf("uploads");
+                var finalPath = item.FilePath.Substring(index - 1);
+                item.FilePath = finalPath;
+            }
+
+            return View(list); 
         }
     }
 }

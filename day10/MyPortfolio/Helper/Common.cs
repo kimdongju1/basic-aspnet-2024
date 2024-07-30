@@ -14,6 +14,7 @@ namespace MyPortfolio.Helper
             {
                 builder.Append(data[i].ToString("x2")); // 16진수 2자리로
             }
+
             return builder.ToString();  // 암호문 리턴 
         }
     }
